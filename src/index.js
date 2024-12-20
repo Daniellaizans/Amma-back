@@ -93,7 +93,6 @@ app.post("/registro-user",
 
 app.get("/usuarios",authenticateToken, async (req, res) => {
     const Usuarios = await db.query("SELECT usuario, idUsuario, nombre, esAdministrador, fechaRegistro FROM usuarios where esAdministrador = true")
-    console.log(Usuarios)
     res.json(Usuarios)
 })
 
